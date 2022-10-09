@@ -1,6 +1,6 @@
 # @uspect/eslint-config-node
 
-ESlint plugin includes Uspect rules for NodeJS applications. 
+ESlint plugin includes Uspect rules for NodeJS applications.
 Designed to use with `@uspect/eslint-config`.
 
 ## Usage

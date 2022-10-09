@@ -1,6 +1,6 @@
 # @uspect/eslint-config-react
 
-ESlint plugin includes Uspect rules for React applications. 
+ESlint plugin includes Uspect rules for React applications.
 Designed to use with `@uspect/eslint-config`.
 
 ## Usage

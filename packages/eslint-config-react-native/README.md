@@ -1,6 +1,6 @@
 # @uspect/eslint-config-react-native
 
-ESlint plugin includes Uspect rules for React Native app applications. 
+ESlint plugin includes Uspect rules for React Native app applications.
 Designed to use with `@uspect/eslint-config`.
 
 ## Usage
