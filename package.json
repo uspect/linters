@@ -1,0 +1,64 @@
+{
+    "name": "linters-monorepo",
+    "version": "1.0.0",
+    "description": "Eslnt config for Uspect in-house projects",
+    "main": "index.js",
+    "scripts": {
+        "prettier": "prettier --write '**/*.{js,ts,md,json,html}'",
+        "prettier:ci": "prettier --check '**/*.{js,ts,md,json,html}'",
+        "lint": "concurrently 'npm:prettier' 'npm:lint:all'",
+        "lint:all": "eslint .",
+        "prelint:ci": "lerna run build:prod --parallel",
+        "lint:ci": "concurrently 'npm:prettier:ci' 'npm:lint:all'",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "eslint-plugin-jsx-a11y": "^6.0.2",
+        "eslint-plugin-react-native": "^3.6.0",
+        "eslint-plugin-react-native-globals": "^0.1.2",
+        "eslint-plugin-react-hooks": "4.6.0",
+        "@typescript-eslint/eslint-plugin": "^5.18.0",
+        "@typescript-eslint/parser": "^5.18.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-react": "^7.29.4"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.10.3",
+        "@babel/preset-env": "^7.10.3",
+        "@babel/preset-typescript": "^7.10.4",
+        "@uspect/eslint-config": "file:./packages/eslint-config",
+        "@uspect/eslint-config-react": "file:./packages/eslint-config-react",
+        "@types/eslint": "^7.2.0",
+        "@types/jest": "^26.0.0",
+        "@types/node": "^14.0.1",
+        "@typescript-eslint/eslint-plugin": "^5.28.0",
+        "@typescript-eslint/parser": "^5.28.0",
+        "concurrently": "5.0.1",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^6.15.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-prettier": "^3.4.1",
+        "husky": "^7.0.4",
+        "lint-staged": "^10.0.1",
+        "prettier": "2.6.2",
+        "react": "^16.13.0",
+        "react-dom": "^16.13.0",
+        "typescript": "4.3.5"
+    },
+    "peerDependencies": {},
+    "prettier": "./packages/prettier-config/index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/uspect/linters.git"
+    },
+    "bugs": {
+        "url": "https://github.com/uspect/linters/issues"
+    },
+    "homepage": "https://github.com/uspect/linters#readme",
+    "author": {
+        "name": "Uspect Team",
+        "email": "hello@uspect.ru"
+    },
+    "license": "ISC"
+}

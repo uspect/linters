@@ -1,0 +1,77 @@
+# @uspect/eslint-config
+
+ESlint plugin includes Uspect Team rules for JS and TS codebase. Better to use with framework-oriented packages `@uspect/eslint-config-react` or `@uspect/eslint-config-angular`
+
+## Usage
+
+Install from npm or yarn
+
+```bash
+npm i --save-dev @uspect/eslint-config
+yarn add @uspect/eslint-config -D
+```
+
+Then, need to include necessary configurations sets to `.eslintrc`. Wee need to choose base configuration, and any
+necessary additional configs. Package include `eslint@7` and `prettier@2` dependencies, so you should remove `eslint`,
+`prettier`, and `@uspect/eslint-config` internal dependencies from your project `package.json`.
+
+### Base configurations
+
+#### For application
+
+```bash
+{
+  "extends": ["@uspect/eslint-config/app"]
+}
+```
+
+#### For library
+
+```bash
+{
+  "extends": ["@uspect/eslint-config/lib"]
+}
+```
+
+### Additional configurations
+
+#### If we use Jest
+
+```bash
+{
+  "extends": ["@uspect/eslint-config/app", "@uspect/eslint-config/jest"]
+}
+```
+
+## Configurations overview
+
+Main configurations sets contains common rules
+
+- `@uspect/eslint-config/app` - common rules and specific rules for applications
+- `@uspect/eslint-config/lib` - common rules and specific rules for libraries
+
+Additional configurations sets. This configs **not** contain common eslint rules, and must be included with main
+configurations
+
+- `@uspect/eslint-config/jest` - rules for lint Jest test suits
+
+## Internal used plugins
+
+`@uspect/eslint-config/app` and `@uspect/eslint-config/lib` include:
+
+- `eslint-config-airbnb` - common and popular configuration
+- `eslint-plugin-eslint-comments` - validate `eslint` comments
+- `eslint-plugin-import` - validate proper imports
+- `eslint-plugin-promise` - enforce best practices for promises
+- `eslint-plugin-jest` - validate jest tests
+- `@typescript-eslint/eslint-plugin` - lint TypeScript files, adopt many eslint rules to TS code, and provide specific
+  TS rules
+- `eslint-plugin-prettier` - disable code formatting using eslint tools and transfers all the logic to a prettier, and
+  report differences as eslint issues
+
+## Troubleshooting
+
+### Wrong or duplicated eslint or some eslint plugins versions
+
+Try to remove `eslint`, `prettier`, and `@uspect/eslint-config` internal dependencies from your project `package.json`,
+then reinstall dependencies.

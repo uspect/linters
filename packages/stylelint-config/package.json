@@ -1,0 +1,28 @@
+{
+    "name": "@uspect/stylelint-config",
+    "version": "1.0.0",
+    "description": "Uspect stylelint config for in-house projects",
+    "license": "Apache-2.0",
+    "keywords": [
+        "stylelint",
+        "prettier"
+    ],
+    "main": "stylelint.config.js",
+    "author": {
+        "name": "Uspect Team",
+        "email": "hello@uspect.ru"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/uspect/linters.git"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "stylelint": "^14.6.1",
+        "stylelint-config-prettier": "^9.0.3",
+        "stylelint-config-standard": "^25.0.0",
+        "stylelint-order": "^5.0.0"
+    }
+}

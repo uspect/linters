@@ -1,0 +1,10 @@
+*.lint
+*.fix
+package-lock.json
+
+__temp_packages__
+
+# Tests
+*/__fixtures__/*
+*/__snapshots__/*
+*.fixture.*

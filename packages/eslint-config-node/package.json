@@ -1,0 +1,36 @@
+{
+    "name": "@uspect/eslint-config-node",
+    "version": "1.0.0",
+    "description": "Uspect ESLint configs for NodeJS apps",
+    "license": "Apache-2.0",
+    "keywords": [
+        "eslint",
+        "eslintconfig",
+        "eslint-config"
+    ],
+    "scripts": {},
+    "main": "index.js",
+    "author": {
+        "name": "Uspect Team",
+        "email": "hello@uspect.ru"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/uspect/linters.git"
+    },
+    "dependencies": {
+        "eslint-config-airbnb": "^18.2.0",
+        "eslint-plugin-jsx-a11y": "~6.4.1"
+    },
+    "devDependencies": {
+        "@uspect/eslint-config": "^1.0.0"
+    },
+    "peerDependencies": {
+        "eslint": "^7.5.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-prettier": "^3.4.1"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
