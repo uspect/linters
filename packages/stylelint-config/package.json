@@ -1,6 +1,6 @@
 {
   "name": "@uspect/stylelint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Uspect stylelint config for in-house projects",
   "keywords": [
     "stylelint",

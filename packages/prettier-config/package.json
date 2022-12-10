@@ -1,6 +1,6 @@
 {
   "name": "@uspect/prettier-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Uspect prettier config for in-house projects",
   "keywords": [
     "prettier",

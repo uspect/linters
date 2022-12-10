@@ -1,6 +1,6 @@
 {
   "name": "@uspect/eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Uspect ESLint configs to rule them all",
   "keywords": [
     "eslint",

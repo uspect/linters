@@ -1,6 +1,6 @@
 {
   "name": "@uspect/eslint-config-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Uspect ESLint configs for NodeJS apps",
   "keywords": [
     "eslint",
