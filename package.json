@@ -1,6 +1,6 @@
 {
   "name": "linters-monorepo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Eslnt config for Uspect in-house projects",
   "homepage": "https://github.com/uspect/linters#readme",
   "bugs": {
