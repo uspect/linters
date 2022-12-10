@@ -23,7 +23,10 @@ module.exports = {
     'no-fallthrough': 'error',
     'no-floating-decimal': 'error',
     'no-global-assign': ['error', { exceptions: [] }],
-    'no-implicit-coercion': ['error', { boolean: true, number: true, string: true, allow: [] }],
+    'no-implicit-coercion': [
+      'error',
+      { boolean: true, number: true, string: true, allow: [] },
+    ],
     'no-implied-eval': 'error',
     'no-lone-blocks': 'error',
     'no-multi-spaces': ['error', { ignoreEOLComments: false }],
@@ -135,7 +138,10 @@ module.exports = {
     ],
     'no-unmodified-loop-condition': 'off',
     'no-useless-call': 'off',
-    'no-warning-comments': ['off', { terms: ['todo', 'fixme', 'xxx'], location: 'start' }],
+    'no-warning-comments': [
+      'off',
+      { terms: ['todo', 'fixme', 'xxx'], location: 'start' },
+    ],
     'require-await': 'off',
     'vars-on-top': 'off',
     'accessor-pairs': 'off',

@@ -11,12 +11,6 @@ module.exports = {
       version: 'detect',
     },
 
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
-      },
-    },
-
     propWrapperFunctions: ['forbidExtraProps', 'exact', 'Object.freeze'],
   },
 
@@ -35,13 +29,16 @@ module.exports = {
       files: ['*.ts', '*.tsx'],
 
       rules: {
-        'react/prop-types': ['error', { ignore: [], customValidators: [], skipUndeclared: false }],
+        'react/prop-types': [
+          'error',
+          { ignore: [], customValidators: [], skipUndeclared: false },
+        ],
       },
     },
   ],
 
   rules: {
-    'react/no-unsafe': ['warn', { checkAliases: true }], // show warnings for deprecated methods
+    'react/no-unsafe': ['warn', { checkAliases: true }],
     'react/no-unused-prop-types': [
       'error',
       {
@@ -55,8 +52,11 @@ module.exports = {
     'react/jsx-equals-spacing': ['error', 'never'],
     'react/destructuring-assignment': 'off',
     'react/jsx-key': 'error',
-    'react/default-props-match-prop-types': ['error', { allowRequiredDefaults: false }],
-    'react/require-default-props': 'off', // default values in props destructuring is not supported
+    'react/default-props-match-prop-types': [
+      'error',
+      { allowRequiredDefaults: false },
+    ],
+    'react/require-default-props': 'off',
     'react/static-property-placement': ['error', 'static public field'],
     'react/state-in-constructor': 'off',
 
@@ -115,9 +115,9 @@ module.exports = {
         ignoreCase: true,
         callbacksLast: false,
         shorthandFirst: false,
-        shorthandLast: false,
-        noSortAlphabetically: false,
+        shorthandLast: true,
         reservedFirst: false,
+        noSortAlphabetically: false,
       },
     ],
     'react/jsx-handler-names': [
@@ -135,7 +135,10 @@ module.exports = {
     'react/jsx-closing-tag-location': 'off',
     'react/jsx-curly-spacing': ['error', 'never', { allowMultiline: true }],
     'react/jsx-indent-props': ['error', 2],
-    'react/jsx-max-props-per-line': ['error', { maximum: 1, when: 'always' }],
+    'react/jsx-max-props-per-line': [
+      'error',
+      { maximum: 1, when: 'multiline' },
+    ],
     'react/jsx-no-bind': [
       'off',
       {
@@ -184,12 +187,15 @@ module.exports = {
     'react/no-redundant-should-component-update': 'error',
     'react/no-unused-state': 'error',
     'react/no-typos': 'error',
-    'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
+    'react/jsx-curly-brace-presence': [
+      'error',
+      { props: 'never', children: 'never' },
+    ],
     'react/display-name': ['off', { ignoreTranspilerName: false }],
     'react/jsx-no-literals': ['off', { noStrings: true }],
     'react/sort-prop-types': [
       'off',
-      { ignoreCase: true, callbacksLast: false, requiredFirst: false },
+      { ignoreCase: true, callbacksLast: false, requiredFirst: true },
     ],
     'react/no-did-mount-set-state': 'off',
     'react/no-did-update-set-state': 'off',
@@ -213,10 +219,10 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
 
-    // For React 16 this rule have been enable. Because in old code we have import React
     'react/jsx-uses-react': 'error',
     'react/react-in-jsx-scope': 'error',
     'react/require-render-return': 'error',
+    'jsx-quotes': [2, 'prefer-single'],
 
     'jsx-a11y/aria-role': 'warn',
     'jsx-a11y/no-static-element-interactions': 'warn',

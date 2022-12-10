@@ -82,8 +82,6 @@ module.exports = {
             allowStaticOnly: true,
           },
         ],
-        // '@typescript-eslint/no-unnecessary-qualifier': 'error', need ts config
-        // '@typescript-eslint/restrict-plus-operands': 'error', need ts config
         camelcase: 'off',
         '@typescript-eslint/camelcase': 'off',
 
@@ -123,7 +121,7 @@ module.exports = {
           },
           {
             selector: 'property',
-            format: ['camelCase', 'PascalCase'],
+            format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
           },
           {
             selector: 'enumMember',
@@ -132,7 +130,6 @@ module.exports = {
         ],
 
         '@typescript-eslint/ban-ts-comment': 'warn',
-        // standard no-unused-expressions don't understand optional chaining from ts
         'no-unused-expressions': 'off',
         '@typescript-eslint/no-unused-expressions': [
           'error',
@@ -165,9 +162,6 @@ module.exports = {
         ],
         'no-shadow': 'off',
         '@typescript-eslint/no-shadow': ['warn'],
-        // conflict with import type statement, try to merge default and named imports
-        // https://github.com/typescript-eslint/typescript-eslint/issues/2545#issuecomment-692842483
-        // https://github.com/import-js/eslint-plugin-import/issues/2114
         'import/no-duplicates': 'off',
 
         '@typescript-eslint/no-this-alias': 'error',

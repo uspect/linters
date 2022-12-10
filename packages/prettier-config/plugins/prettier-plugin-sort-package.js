@@ -11,10 +11,13 @@ exports.parsers = {
   'json-stringify': {
     ...parser,
     preprocess(text, options) {
-      const processed = parser.preprocess ? parser.preprocess(text, options) : text;
+      const processed = parser.preprocess
+        ? parser.preprocess(text, options)
+        : text;
 
       const isPackageJson =
-        options.filepath && /package\.json$|ng-package\.json$/.test(options.filepath);
+        options.filepath &&
+        /package\.json$|ng-package\.json$/.test(options.filepath);
 
       if (isPackageJson) {
         const json = JSON.parse(processed);
@@ -24,7 +27,7 @@ exports.parsers = {
         /**
          * @note: add the scripts field if it's provided
          * the scripts must be unsorted
-         */
+         **/
         // eslint-disable-next-line no-prototype-builtins
         if (json?.hasOwnProperty('scripts')) {
           sorted.scripts = unsortedScripts;

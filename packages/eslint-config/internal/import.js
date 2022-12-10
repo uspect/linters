@@ -7,22 +7,25 @@ module.exports = {
         extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'],
       },
       typescript: {},
-      webpack: {},
     },
     'import/core-modules': [],
-    'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
+    'import/ignore': [
+      'node_modules',
+      '\\.(coffee|scss|css|less|hbs|svg|json)$',
+    ],
   },
 
   rules: {
     'import/no-commonjs': 'off',
     'import/unambiguous': 'off',
     'import/no-deprecated': 'warn',
-    'import/prefer-default-export': 'off', // default imports is evil
-    'import/default': 'error', // enable default import validation
+    'import/prefer-default-export': 'off',
+    'import/default': 'error',
     'import/extensions': [
       'error',
       'always',
       {
+        '': 'never',
         js: 'never',
         jsx: 'never',
         ts: 'never',
@@ -30,7 +33,7 @@ module.exports = {
       },
     ],
     'import/order': ['warn', { groups: [['builtin', 'external', 'internal']] }],
-    'import/no-extraneous-dependencies': 'off', // need fine tuning
+    'import/no-extraneous-dependencies': 'off',
     'import/no-cycle': 'off',
   },
 };

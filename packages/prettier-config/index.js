@@ -1,11 +1,11 @@
 const config = {
-  printWidth: 100,
+  printWidth: 80,
 
   semi: true,
   useTabs: false,
-  singleQuote: true,
   bracketSpacing: true,
 
+  singleQuote: true,
   jsxSingleQuote: true,
 
   tabWidth: 2,
@@ -14,6 +14,10 @@ const config = {
 
   arrowParens: 'always',
   htmlWhitespaceSensitivity: 'strict',
+
+  importOrder: ['^react/(.*)$', '^components/(.*)$', '^[./]'],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
 
   plugins: [require.resolve('@prettier/plugin-xml')],
 
@@ -34,11 +38,16 @@ const config = {
       files: ['package.json'],
       options: {
         parser: 'json-stringify',
-        plugins: [require('path').resolve(__dirname, 'plugins', 'prettier-plugin-sort-package')],
+        plugins: [
+          require('path').resolve(
+            __dirname,
+            'plugins',
+            'prettier-plugin-sort-package',
+          ),
+        ],
       },
     },
     {
-      // @prettier/plugin-xml
       files: ['*.xml'],
       options: { parser: 'xml' },
     },

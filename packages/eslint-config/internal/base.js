@@ -5,11 +5,6 @@ module.exports = {
 
   settings: {
     'import/parser': '@babel/eslint-parser',
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.tsx', '.ts'],
-      },
-    },
   },
 
   plugins: ['@babel'],
@@ -97,17 +92,34 @@ module.exports = {
     'no-empty': ['error', { allowEmptyCatch: true }],
     'no-underscore-dangle': 'off',
     'no-return-assign': ['error', 'except-parens'],
-    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
-    'spaced-comment': ['error', 'always', { exceptions: ['*'] }],
+    'lines-between-class-members': [
+      'error',
+      'always',
+      { exceptAfterSingleLine: true },
+    ],
     'max-nested-callbacks': ['error', 4],
     'no-bitwise': 'warn',
     'no-useless-escape': 'warn',
     'no-await-in-loop': 'off',
 
-    'arrow-body-style': ['error', 'as-needed', { requireReturnForObjectLiteral: false }],
-    'object-shorthand': ['error', 'always', { ignoreConstructors: false, avoidQuotes: true }],
-    'prefer-arrow-callback': ['error', { allowNamedFunctions: false, allowUnboundThis: true }],
-    'prefer-const': ['error', { destructuring: 'any', ignoreReadBeforeAssign: true }],
+    'arrow-body-style': [
+      'error',
+      'as-needed',
+      { requireReturnForObjectLiteral: false },
+    ],
+    'object-shorthand': [
+      'error',
+      'always',
+      { ignoreConstructors: false, avoidQuotes: true },
+    ],
+    'prefer-arrow-callback': [
+      'error',
+      { allowNamedFunctions: false, allowUnboundThis: true },
+    ],
+    'prefer-const': [
+      'error',
+      { destructuring: 'any', ignoreReadBeforeAssign: true },
+    ],
     'prefer-destructuring': [
       'off',
       {
@@ -132,6 +144,15 @@ module.exports = {
     'symbol-description': 'off',
     'template-curly-spacing': 'error',
     'yield-star-spacing': ['error', 'after'],
+    'spaced-comment': [
+      'error',
+      'always',
+      {
+        line: {
+          markers: ['/'],
+        },
+      },
+    ],
   },
 
   globals: {

@@ -1,5 +1,3 @@
 {
-    "extends": [
-        "@uspect/eslint-config/lib"
-    ]
+  "extends": ["@uspect/eslint-config/lib"]
 }
