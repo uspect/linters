@@ -8,7 +8,7 @@ module.exports = {
     './internal/test-files',
     './internal/best-practice',
     './internal/typescript',
-    './internal/prettier',
+    // './internal/prettier',
     './internal/variables',
   ],
 

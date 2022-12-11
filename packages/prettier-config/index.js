@@ -15,19 +15,15 @@ const config = {
   arrowParens: 'always',
   htmlWhitespaceSensitivity: 'strict',
 
-  importOrder: ['^react/(.*)$', '^components/(.*)$', '^[./]'],
-  importOrderSeparation: true,
-  importOrderSortSpecifiers: true,
-
   plugins: [require.resolve('@prettier/plugin-xml')],
 
   overrides: [
     {
-      files: ['*.js'],
+      files: ['*.js', '*.jsx'],
       options: { parser: 'babel' },
     },
     {
-      files: ['*.ts'],
+      files: ['*.ts', '*.tsx'],
       options: { parser: 'typescript' },
     },
     {

@@ -3,7 +3,6 @@ module.exports = {
     'eslint-config-airbnb/rules/react',
     'eslint-config-airbnb/rules/react-a11y',
     'eslint-config-airbnb/hooks',
-    'prettier/react',
   ],
 
   settings: {
@@ -22,7 +21,7 @@ module.exports = {
     browser: true,
   },
 
-  plugins: ['react', 'react-hooks'],
+  plugins: ['react', 'react-hooks', 'simple-import-sort'],
 
   overrides: [
     {
@@ -33,11 +32,43 @@ module.exports = {
           'error',
           { ignore: [], customValidators: [], skipUndeclared: false },
         ],
+
+        'simple-import-sort/imports': [
+          'error',
+          {
+            groups: [
+              // `react` first, `next` second, then packages starting with a character
+              ['^react$', '^next', '^[a-z]', '^@[a-z]'],
+              // Packages starting with `@`
+              ['^@/containers'],
+              ['^@/components'],
+              ['^@/hooks'],
+              ['^@/utils'],
+              ['^@/resources'],
+              ['^@/locales'],
+              ['^@/assets'],
+              ['^@/'],
+              // Packages starting with `~`
+              ['^~'],
+              // Imports starting with `../`
+              ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+              // Imports starting with `./`
+              ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+              // Style imports
+              ['^.+\\.s?css$'],
+              // Side effect imports
+              ['^\\u0000'],
+            ],
+          },
+        ],
       },
     },
   ],
 
   rules: {
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
+
     'react/no-unsafe': ['warn', { checkAliases: true }],
     'react/no-unused-prop-types': [
       'error',
@@ -260,5 +291,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'no-underscore-dangle': 'off',
     'react/no-multi-comp': ['off', { ignoreStateless: true }],
+
+    'max-len': ['error', { code: 180 }],
   },
 };

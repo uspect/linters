@@ -23,7 +23,6 @@ module.exports = {
     radix: 'warn',
     'no-return-await': 'warn',
     'import/order': 'warn',
-
     'global-require': 'error',
     'no-buffer-constructor': 'error',
     'no-new-require': 'error',
